@@ -18,7 +18,6 @@ function onModalOpen(event) {
     let modal = basicLightbox.create(`<img src="${event.target.parentNode.href}" width="800" height="600">`);
     modal.show();
     window.addEventListener("keydown", onModalClose);
-    return bigPicture
 }
 
 
