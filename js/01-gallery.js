@@ -18,15 +18,15 @@ function onModalOpen(event) {
     let modal = basicLightbox.create(`<img src="${event.target.parentNode.href}" width="800" height="600">`);
     modal.show();
     window.addEventListener("keydown", onModalClose);
-}
-
-
-
-function onModalClose(event) {
-
-    if (event.code === 'Escape') {
+    function onModalClose(evt) {
+    if (evt.code === 'Escape') {
         modal.close();
         console.log();
     }
     window.removeEventListener("keydown", onModalClose)
 }
+
+}
+
+
+
