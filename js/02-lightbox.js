@@ -11,16 +11,8 @@ function createItem(array) {
 };
 gallery.insertAdjacentHTML("afterbegin", createItem(galleryItems));
 
-gallery.addEventListener('click', onModalOpen);
+const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionsDelay: 250,
+});
 
-function onModalOpen(event) {
-    event.preventDefault();
-    const lightbox = new SimpleLightbox('.gallery a');
-    console.log(lightbox)
-    lightbox.show();
-    lightbox.addEventListener('click', onModalClose)
-    function onModalClose(evt) {
-        lightbox.destroy()
-        console.log('close')
-    }
-}
